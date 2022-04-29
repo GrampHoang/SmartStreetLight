@@ -2,25 +2,23 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import StatD from '../screens/StatDaily.js';
-import Swtiches from '../screens/Switches.js';
-import StatFooter from './StatFooter.js';
+import StatM from '../screens/StatMonthly.js';
+import StatW from '../screens/StatWeekly.js';
 
 const Tab = createBottomTabNavigator();
 
-const Footer = () => {
+const StatFooter = () => {
   return (
-    <Tab.Navigator
-      defaultScreenOptions={"Home"}
-      screenOptions={{headerShown: false}}
-    >
-      <Tab.Screen name="Stat" component={StatFooter} />
-      <Tab.Screen name="Swtiches" component={Swtiches} />
+    <Tab.Navigator>
+      <Tab.Screen name="StatD" component={StatD} />
+      <Tab.Screen name="StatW" component={StatW} />
+      <Tab.Screen name="StatM" component={StatM} />
     </Tab.Navigator>
   )
 }
 
 
-export default Footer;
+export default StatFooter;
 
 const styles = StyleSheet.create({
   header: {

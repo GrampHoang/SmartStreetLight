@@ -1,17 +1,18 @@
-
-
-// DetailScreen là nơi hiện stat của đèn, trong đó có 1 button ở cuối chuyển sang OptionScreen để bật/tắt và điều chỉnh đèn
-// OptionScreen có lẽ nên làm cuối, trước mắt cứ làm mấy cái này đã 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Footer from '../components/Footer.js';
 import Header from '../components/Header.js';
 import React from 'react';
 
-export default function DetailScreen({navigation}) {
+export default function Swtiches({navigation}) {
   return (
     <View style={styles.container}>
-        <Text> Thống kê </Text>
+        <Text> Swtiches </Text>
+        <Button 
+          title = "Tới 1 cái đèn"
+          color = "red"
+          onPress={() => navigation.navigate("DetailScreen")}
+        />
     </View>
   );
 }

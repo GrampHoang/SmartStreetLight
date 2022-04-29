@@ -9,7 +9,9 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
- 
+import { Dimensions } from "react-native";
+var pwidth = Dimensions.get('window').width; //full width
+
 export default function LoginScreen({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,13 +44,13 @@ export default function LoginScreen({navigation}) {
         <Text style={styles.forgot_button}>Quên mật khẩu?</Text>
       </TouchableOpacity>
  
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("HomeScreen")}>
+      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("Combine")}>
         <Text style={styles.loginText}>ĐĂNG NHẬP</Text>
       </TouchableOpacity>
       
       <Text style={styles.guest_text}> Đăng nhập với tư cách là khách</Text>
 
-      <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Combine")}>
       <Image style={styles.guest} source={require("../assets/favicon.png")} />
       </TouchableOpacity>
     </View>
@@ -87,10 +89,11 @@ const styles = StyleSheet.create({
  
   forgot_button: {
     height: 40,
-    marginBottom: 0,
     fontWeight: 'bold',
     fontSize: 15,
-    marginLeft: 200,
+    width: pwidth*0.75,
+    textAlign: 'right',
+    fontStyle: 'italic',
   },
  
   loginBtn: {

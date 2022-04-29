@@ -7,11 +7,12 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import Footer from '../components/Footer.js';
 import Header from '../components/Header.js';
 import React from 'react';
+import StatFooter from '../components/StatFooter.js'
 
-export default function DetailScreen({navigation}) {
+export default function StatD({navigation}) {
   return (
     <View style={styles.container}>
-        <Text> Thống kê </Text>
+        <Text> Thống kê hàng ngày</Text>
     </View>
   );
 }

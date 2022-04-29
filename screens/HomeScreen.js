@@ -13,11 +13,6 @@ export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
         <Text> Homescreen </Text>
-        <Button 
-          title = "Tới 1 cái đèn"
-          color = "red"
-          onPress={() => navigation.navigate("DetailScreen")}
-        />
     </View>
   );
 }
