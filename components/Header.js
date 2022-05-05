@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
+import { Dimensions } from "react-native";
+var pwidth = Dimensions.get('window').width; //full width
 export default function App() {
   return (
     <View style={styles.header}>
-      <Text style={styles.text}> 9,000,000 VND </Text>
+      <Text style={styles.text}> Ngã tư Thủ Đức </Text>
     </View>
   );
 };
@@ -12,8 +13,11 @@ export default function App() {
 const styles = StyleSheet.create({
     header: {
         height: 60,
-        padding: 15,
-        backgroundColor: '#16B830',
+        backgroundColor: "#367BF5",
+        width: pwidth,
+        borderWidth: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     container: {
         flex: 1,

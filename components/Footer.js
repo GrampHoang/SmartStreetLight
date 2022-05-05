@@ -14,7 +14,7 @@ const Footer = () => {
       screenOptions={{headerShown: false}}
     >
       <Tab.Screen name="Stat" component={StatFooter} />
-      <Tab.Screen name="Swtiches" component={Swtiches} />
+      <Tab.Screen name="Switches" component={Swtiches} />
     </Tab.Navigator>
   )
 }
