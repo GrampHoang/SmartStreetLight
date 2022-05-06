@@ -1,7 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import StatD from '../screens/StatDaily.js';
+import { Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import Swtiches from '../screens/Switches.js';
 import StatFooter from './StatFooter.js';
 
@@ -11,10 +12,42 @@ const Footer = () => {
   return (
     <Tab.Navigator
       defaultScreenOptions={"Home"}
-      screenOptions={{headerShown: false}}
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          height: 52,
+          paddingBottom: 2,
+        }
+      }}
     >
-      <Tab.Screen name="Stat" component={StatFooter} />
-      <Tab.Screen name="Switches" component={Swtiches} />
+      <Tab.Screen name="Stat" component={StatFooter} options={{
+        tabBarInactiveTintColor: '#748c94',
+        tabBarActiveTintColor: '#e32f45',
+        tabBarLabel: 'Statistic',
+        tabBarIcon: ({focused, color}) => {
+          return <Ionicons name="stats-chart-outline" size={28} color={color} />;
+        },
+        tabBarIconStyle: {
+          top: 2,
+        },
+        tabBarLabelStyle: {
+          paddingBottom: 1,
+        },
+      }}/>
+      <Tab.Screen name="Switches" component={Swtiches} options={{
+        tabBarInactiveTintColor: '#748c94',
+        tabBarActiveTintColor: '#e32f45',
+        tabBarLabel: 'Switches',
+        tabBarIcon: ({focused, color}) => {
+          return <AntDesign name="switcher" size={28} color={color} />;
+        },
+        tabBarIconStyle: {
+          top: 2,
+        },
+        tabBarLabelStyle: {
+          paddingBottom: 1,
+        },
+      }}/>
     </Tab.Navigator>
   )
 }
