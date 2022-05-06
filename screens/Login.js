@@ -33,7 +33,7 @@ export default function LoginScreen({navigation}) {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Mật khẩu."
+          placeholder="Mật khẩu"
           placeholderTextColor="#000000"
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
