@@ -1,10 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { Dimensions } from "react-native";
 var pwidth = Dimensions.get('window').width; //full width
 export default function App() {
   return (
     <View style={styles.header}>
+      <StatusBar/>
       <Text style={styles.text}> Ngã tư Thủ Đức </Text>
     </View>
   );
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: StatusBar.currentHeight,
     },
     container: {
         flex: 1,

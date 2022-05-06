@@ -12,6 +12,7 @@ import StatFooter from '../components/StatFooter.js'
 export default function StatM({navigation}) {
   return (
     <View style={styles.container}>
+      <Header/>
         <Text> Thống kê hàng tháng</Text>
     </View>
   );
@@ -26,7 +27,5 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
   },
 });

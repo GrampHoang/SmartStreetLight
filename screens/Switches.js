@@ -1,9 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Switch } from 'react-native';
+import { StyleSheet, Text, View, Button, Switch, ScrollView, TextInput, Alert, TouchableOpacity } from 'react-native';
 import Footer from '../components/Footer.js';
 import Header from '../components/Header.js';
 import React, {useState} from 'react';
 import { Dimensions } from "react-native";
+import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 var pwidth = Dimensions.get('window').width; //full width
 
@@ -18,10 +18,53 @@ export default function Swtiches({navigation}) {
   const toggleSwitch2 = () => set2IsEnabled(previousState => !previousState);
   const toggleSwitch3 = () => set3IsEnabled(previousState => !previousState);
 
+  const [redTime, setRed] = useState("");
+  const [yellowTime, setYellow] = useState("");
+  const [greenTime, setGreen] = useState("");
+
+
   return (
-  <View style={styles.container}>
+  <ScrollView contentContainerStyle={styles.container}>
     <Header/>
-    <View style ={styles.smol_container}>
+ 
+    <View style ={styles.timeinput_container}>
+      <Text style ={styles.title}> Thời gian đèn: </Text>
+
+      <View style ={styles.time_container}>
+        <Text style ={styles.switch_text}>Đỏ: </Text>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.TextInput}
+            onChangeText={(redTime) => setRed(redTime)}
+          />
+        </View>
+      </View>
+      <View style ={styles.time_container}>
+        <Text style ={styles.switch_text}>Vàng: </Text>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.TextInput}
+            onChangeText={(redTime) => setRed(redTime)}
+          />
+        </View>
+      </View>
+      <View style ={styles.time_container}>
+        <Text style ={styles.switch_text}>Xanh: </Text>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.TextInput}
+            onChangeText={(redTime) => setRed(redTime)}
+          />
+        </View>
+      </View>
+
+      <TouchableOpacity style={styles.send_button} onPress={() =>  Alert.alert("Bạn chắc chứ?")}>
+        <Text style={{color:'#FFFFFF'}}>CẬP NHẬT</Text>
+      </TouchableOpacity>
+    </View>
+
+
+    <View style ={styles.mode_container}>
     <Text style ={styles.title}> Chế độ đèn: </Text>
 
     <View style ={styles.switch_container}>
@@ -56,10 +99,9 @@ export default function Swtiches({navigation}) {
           value={isEnabled3}
         />
       </View>
-
     </View>
-  </View>
-  );
+  </ScrollView>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -71,19 +113,28 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        marginTop: 50,
         alignItems: 'center',
   },
-    smol_container: {
+    mode_container: {
       marginTop: 10,
       flexDirection: 'column',
       backgroundColor: '#FFFFFF',
-      height: 250,
+      height: 275,
       borderColor: '#000000',
       alignItems: 'center',
       borderWidth: 2,
       width: pwidth*0.95,
   },
+  timeinput_container: {
+    marginTop: 10,
+      flexDirection: 'column',
+      backgroundColor: '#FFFFFF',
+      height: 350,
+      borderColor: '#000000',
+      alignItems: 'center',
+      borderWidth: 2,
+      width: pwidth*0.95,
+},
     switch_container: {
       width: pwidth*0.55,
       flexDirection: 'row',
@@ -94,6 +145,18 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between'
     },
+    
+    time_container: {
+      width: pwidth*0.75,
+      flexDirection: 'row',
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    },
+
 
     title: {
       fontSize: 30,
@@ -102,5 +165,31 @@ const styles = StyleSheet.create({
     switch_text: {
       fontSize: 20,
     },
-
+    inputView: {
+      height: 50,
+      width: 150,
+      borderWidth: 2,
+      alignItems: 'center',
+    },
+   
+    TextInput: {
+      height: 50,
+      flex: 1,
+      padding: 10,
+      marginLeft: 20,
+      fontSize: 15,
+    },
+    send_button: {
+      width: "30%",
+      borderColor: "#000000",
+      borderWidth: 2,
+      height: 50,
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: 10,
+      marginBottom: 15,
+      backgroundColor: "#367BF5",
+      marginRight: "5%",
+      alignSelf: 'flex-end',
+    },
 });
