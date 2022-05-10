@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Footer from '../components/Footer.js';
-import Header from '../components/Header.js';
 import React from 'react';
 
 // HomeScreen sẽ có 1 cái bản đò dạng static image, trong đó có 1-2 coponent đại điện cho cái đèn đỏ

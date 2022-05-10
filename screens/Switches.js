@@ -1,9 +1,7 @@
-import { StyleSheet, Text, View, Button, Switch, ScrollView, TextInput, Alert, TouchableOpacity } from 'react-native';
-import Footer from '../components/Footer.js';
+import { StyleSheet, Text, View, Switch, ScrollView, TextInput, Alert, TouchableOpacity } from 'react-native';
 import Header from '../components/Header.js';
 import React, {useState} from 'react';
 import { Dimensions } from "react-native";
-import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 var pwidth = Dimensions.get('window').width; //full width
 
@@ -25,11 +23,9 @@ export default function Swtiches({navigation}) {
 
   return (
   <ScrollView contentContainerStyle={styles.container}>
-    <Header/>
- 
+    <Header />
     <View style ={styles.timeinput_container}>
       <Text style ={styles.title}> Thời gian đèn: </Text>
-
       <View style ={styles.time_container}>
         <Text style ={styles.switch_text}>Đỏ: </Text>
         <View style={styles.inputView}>
@@ -44,7 +40,7 @@ export default function Swtiches({navigation}) {
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
-            onChangeText={(redTime) => setRed(redTime)}
+            onChangeText={(redTime) => setYellow(redTime)}
           />
         </View>
       </View>
@@ -53,7 +49,7 @@ export default function Swtiches({navigation}) {
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
-            onChangeText={(redTime) => setRed(redTime)}
+            onChangeText={(redTime) => setGreen(redTime)}
           />
         </View>
       </View>
@@ -161,6 +157,7 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 30,
       fontWeight: 'bold',
+      marginTop: 8,
     },
     switch_text: {
       fontSize: 20,

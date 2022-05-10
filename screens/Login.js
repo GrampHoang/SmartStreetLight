@@ -6,7 +6,6 @@ import {
   View,
   Image,
   TextInput,
-  Button,
   TouchableOpacity,
 } from "react-native";
 import { Dimensions } from "react-native";

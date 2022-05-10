@@ -1,19 +1,32 @@
-
-
-// DetailScreen là nơi hiện stat của đèn, trong đó có 1 button ở cuối chuyển sang OptionScreen để bật/tắt và điều chỉnh đèn
-// OptionScreen có lẽ nên làm cuối, trước mắt cứ làm mấy cái này đã 
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import Footer from '../components/Footer.js';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+import React, {useState, useEffect} from 'react';
 import Header from '../components/Header.js';
-import React from 'react';
-import StatFooter from '../components/StatFooter.js'
+import StatGeneral from './StatGeneral';
 
-export default function StatD({navigation}) {
+var pwidth = Dimensions.get('window').width; //full width
+
+export default function StatD() {
+  const [currentDate, setCurrentDate] = useState('');
+  useEffect(() => {
+    var date = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+    setCurrentDate(
+      date + '/' + month + '/' + year
+    );
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Header/>
-        <Text> Thống kê hàng ngày</Text>
+    <View> 
+      <Header />
+      <StatGeneral />
+      <ScrollView>
+        <View style={styles.container}>
+            <View style={styles.container_sub}>
+              <Text style={styles.HeaderStat}> Biểu đồ ngày {currentDate} </Text>
+            </View>
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -27,5 +40,22 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-  },
+        marginTop: 8,
+    },
+    container_sub: {
+      margin: 6,
+      borderWidth: 2,
+      width: pwidth - 12,
+      height: pwidth,
+    },
+    HeaderStat: {
+      fontSize: 18,
+      margin: 5,
+      marginLeft: 5,
+      fontWeight: 'bold'
+    },
+    ContentStat: {
+      marginLeft: 20,
+      marginBottom: 5,
+    },
 });
