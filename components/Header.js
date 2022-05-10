@@ -6,7 +6,7 @@ var pwidth = Dimensions.get('window').width; //full width
 export default function App() {
   return (
     <View style={styles.header}>
-      <StatusBar/>
+      <StatusBar backgroundColor={"#fff"}/>
       <Text style={styles.text}> Ngã tư Thủ Đức </Text>
     </View>
   );

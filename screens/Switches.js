@@ -2,9 +2,7 @@ import { StyleSheet, Text, View, Switch, ScrollView, TextInput, Alert, Touchable
 import Header from '../components/Header.js';
 import React, {useState} from 'react';
 import { Dimensions } from "react-native";
-
 var pwidth = Dimensions.get('window').width; //full width
-
 
 export default function Swtiches({navigation}) {
 
@@ -19,8 +17,7 @@ export default function Swtiches({navigation}) {
   const [redTime, setRed] = useState("");
   const [yellowTime, setYellow] = useState("");
   const [greenTime, setGreen] = useState("");
-
-
+  
   return (
   <ScrollView contentContainerStyle={styles.container}>
     <Header />
@@ -30,6 +27,8 @@ export default function Swtiches({navigation}) {
         <Text style ={styles.switch_text}>Đỏ: </Text>
         <View style={styles.inputView}>
           <TextInput
+            keyboardType='number-pad'
+            maxLength={3}
             style={styles.TextInput}
             onChangeText={(redTime) => setRed(redTime)}
           />
@@ -39,8 +38,10 @@ export default function Swtiches({navigation}) {
         <Text style ={styles.switch_text}>Vàng: </Text>
         <View style={styles.inputView}>
           <TextInput
+          keyboardType='number-pad'
+          maxLength={3}
             style={styles.TextInput}
-            onChangeText={(redTime) => setYellow(redTime)}
+            onChangeText={(redTime) => setYellow(yellowTime)}
           />
         </View>
       </View>
@@ -48,8 +49,10 @@ export default function Swtiches({navigation}) {
         <Text style ={styles.switch_text}>Xanh: </Text>
         <View style={styles.inputView}>
           <TextInput
+          keyboardType='number-pad'
+          maxLength={3}
             style={styles.TextInput}
-            onChangeText={(redTime) => setGreen(redTime)}
+            onChangeText={(redTime) => setGreen(greenTime)}
           />
         </View>
       </View>
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#EFEFEF',
         alignItems: 'center',
   },
     mode_container: {
@@ -118,17 +121,20 @@ const styles = StyleSheet.create({
       height: 275,
       borderColor: '#000000',
       alignItems: 'center',
-      borderWidth: 2,
+      borderWidth: 0,
+      borderRadius: 10,
       width: pwidth*0.95,
   },
   timeinput_container: {
     marginTop: 10,
+    marginBottom: 5,
       flexDirection: 'column',
       backgroundColor: '#FFFFFF',
       height: 350,
       borderColor: '#000000',
       alignItems: 'center',
-      borderWidth: 2,
+      borderWidth: 0,
+      borderRadius: 10,
       width: pwidth*0.95,
 },
     switch_container: {
@@ -158,6 +164,7 @@ const styles = StyleSheet.create({
       fontSize: 30,
       fontWeight: 'bold',
       marginTop: 8,
+      color: "#464646",
     },
     switch_text: {
       fontSize: 20,
@@ -167,14 +174,17 @@ const styles = StyleSheet.create({
       width: 150,
       borderWidth: 2,
       alignItems: 'center',
+      backgroundColor: '#EFEFEF',
+      borderRadius: 10,
     },
    
     TextInput: {
       height: 50,
       flex: 1,
-      padding: 10,
       marginLeft: 20,
-      fontSize: 15,
+      fontSize: 24,
+      justifyContent: 'center',
+      alignSelf: 'center',
     },
     send_button: {
       width: "30%",
@@ -188,5 +198,6 @@ const styles = StyleSheet.create({
       backgroundColor: "#367BF5",
       marginRight: "5%",
       alignSelf: 'flex-end',
+      borderRadius: 10,
     },
 });
