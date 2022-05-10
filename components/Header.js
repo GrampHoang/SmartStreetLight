@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { Dimensions } from "react-native";
+
 var pwidth = Dimensions.get('window').width; //full width
+
 export default function App() {
   return (
     <View style={styles.header}>
@@ -28,7 +30,8 @@ const styles = StyleSheet.create({
     },
     text:{
         color: '#FFFFFF',
-        fontSize: 24,
+        fontSize: 30,
         textAlign: 'center',
+        fontWeight: 'bold',
     }
 });

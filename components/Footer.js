@@ -52,7 +52,6 @@ const Footer = () => {
   )
 }
 
-
 export default Footer;
 
 const styles = StyleSheet.create({
