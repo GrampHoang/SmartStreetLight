@@ -1,7 +1,25 @@
-# SmartStreetLight
+# React Navigation Version 6 Mix
 
-1. react native gốc
-2. @react-navigation/bottom-tabs
-3. @react-navigation/native
-4. @react-navigation/native-stack
-5. react-native-onboarding-swiper (từ app cũ, không cần xài ở đây)
+This project is part of a [tutorial series on React Navigation v6](https://youtube.com/playlist?list=PLQWFhX-gwJbmtZY4mcRE-k7hL9DigcGS-) on my [YouTube Channel](https://www.youtube.com/channel/UC43N9Z8Fm0gg1Lgpw0eS9rg).
+
+Here you'll find most of the navigator available in React Navigation along with some UI of the different screens of the app.
+
+# YouTube Video List
+
+- [Login & Register Screen UI Tutorial](https://youtu.be/5RUl8exLI-c)
+
+- [Dynamic Tab Navigator in React Navigation 6](https://youtu.be/ihfS3kEvH2o)
+
+- [Custom Drawer Navigator in React Navigation 6](https://youtu.be/l8nY4Alk70Q)
+
+- [Gaming App in UI](https://www.youtube.com/watch?v=I5doVFcG94U)
+
+- [Getting Started with Stack Navigation 6 | Stack Navigator](https://www.youtube.com/watch?v=FWwKjxSgLl8)
+
+# App Screenshots
+
+![Gaming App UI](./screenshots/gaming-app-ui-with-tabbar.png)
+![Custom Drawer](./screenshots/custom-drawer-iphone.png)
+
+![Login UI](./screenshots/login-iphone.png)
+![Register UI](./screenshots/register-iphone.png)
